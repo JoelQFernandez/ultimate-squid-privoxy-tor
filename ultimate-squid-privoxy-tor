@@ -57,10 +57,11 @@ csv()
 {
 	csvTorStatus()
 	{
-		useragent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:5.0.1) Gecko/20100101 Firefox/5.0.1"
-		URL="http://torstatus.blutmagie.de/query_export.php/Tor_query_EXPORT.csv";
-		#torStatus=$(curl --user-agent "$useragent" "$URL");
-		torStatus=$(cat /Volumes/Data/Users/administrator/Downloads/Tor_query_EXPORT.csv);
+		useragent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; \
+            rv:5.0.1) Gecko/20100101 Firefox/5.0.1"
+		blutmagieURL="http://torstatus.blutmagie.de/query_export.php/Tor_query_EXPORT.csv";
+		torstatusInfoURL="torstatus.info/query_export.php/Tor_query_EXPORT.csv"
+		torStatus=$(curl -k --user-agent "$useragent" "$torstatusInfoURL");	
 	}
 	csvQueries()
 	{
